@@ -1,0 +1,46 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8888
+  application:
+    name: vets-service
+---
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-server:8888
+---
+spring:
+  profiles: kubernetes
+  cloud:
+    config:
+      enabled: false
+    kubernetes:
+      reload:
+        strategy: restart-context
+        enabled: true
+      config:
+        enabled: true
+        name: petclinic-config
+management:
+  endpoint:
+    restart:
+      enabled: true
+---
+spring:
+  profiles: tas4k8s
+  cloud:
+    config:
+      enabled: false
+    kubernetes:
+      reload:
+        strategy: restart-context
+        enabled: true
+      config:
+        enabled: true
+        name: petclinic-config
+management:
+  endpoint:
+    restart:
+      enabled: true

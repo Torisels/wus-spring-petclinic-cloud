@@ -19,9 +19,9 @@ spec:
         app: customers-service
     spec:
       containers:
-      - image: ${REPOSITORY_PREFIX}/spring-petclinic-cloud-customers-service:latest
+      - image: ${REPOSITORY_PREFIX}/spring-petclinic-cloud-customers-service:${TAG}
         name: customers-service
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             port: 8080

@@ -18,9 +18,9 @@ spec:
         app: visits-service
     spec:
       containers:
-      - image: ${REPOSITORY_PREFIX}/spring-petclinic-cloud-visits-service:latest
+      - image: ${REPOSITORY_PREFIX}/spring-petclinic-cloud-visits-service:${TAG}
         name: visits-service
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             port: 8080

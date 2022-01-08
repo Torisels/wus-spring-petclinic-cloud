@@ -9,7 +9,7 @@
     <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
       <level>INFO</level>
     </filter>
-    <log>vets-service.log</log> <!-- Optional : default java.log -->
+    <log>visits.log</log> <!-- Optional : default java.log -->
     <enhancer>com.example.logging.logback.enhancers.ExampleEnhancer</enhancer> <!-- Optional -->
     <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
   </appender>

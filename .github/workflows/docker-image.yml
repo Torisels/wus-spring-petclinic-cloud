@@ -48,6 +48,11 @@ jobs:
       - uses: google-github-actions/auth@v0.4.0
         with:
           credentials_json: ${{ secrets.GKE_SA_KEY }}
-      - name: Build images
+      - id: 'get-credentials'
+        uses: 'google-github-actions/get-gke-credentials@v0'
+        with:
+          cluster_name: ${{ secrets.GKE_CLUSTER }}
+          location: ${{ secrets.GKE_REGION }}
+      - name: Deploy images
         working-directory: ./spring-petclinic-cloud
         run: chmod +x scripts/deployToKubernetes.sh && ./scripts/deployToKubernetes.sh

@@ -14,18 +14,16 @@
 - lokalnie zainstalowany `helm` - [Instrukcja instalacji](https://helm.sh/docs/intro/install/)
 ---
 ### Konfiguracja gcloud
-W pliku `setup.sh` należy ustawić następujące zmienne środowiskowe:
-* aa
+W pliku `setup.sh` należy ustawić wszystkie znajdujące się tam zmienne środowiskowe.
 
 Przed uruchomieniem skryptu instalującego klaster należy uruchomić komendę 
 `source setup.sh`, tak aby załadować konfigurację.
 
-### Instalacja ansible (np. na maszynie lokalnej)
-
-0. Sklonowanie repozytorium: `git clone https://gitlab-stud.elka.pw.edu.pl/wus-21z/lab2.git` i 
-
-## Uruchomienie:
-
+# Stawianie klastra
 
 
 ## Konfiguracja 
+
+
+
+## Uruchomienie:

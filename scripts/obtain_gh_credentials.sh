@@ -15,5 +15,3 @@ gcloud projects add-iam-policy-binding ${CLOUDSDK_CORE_PROJECT} \
 gcloud iam service-accounts keys create key.json \
 --iam-account=${SA_EMAIL} \
 --project=${CLOUDSDK_CORE_PROJECT}
-
-cat key.json

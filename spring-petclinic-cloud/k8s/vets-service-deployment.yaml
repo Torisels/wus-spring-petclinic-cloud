@@ -38,9 +38,9 @@ spec:
               command: ["sh", "-c", "sleep 10"]
         resources:
           limits:
-            memory: 700Mi
+            memory: 1Gi
           requests:
-            memory: 256Mi
+            memory: 1Gi
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: kubernetes

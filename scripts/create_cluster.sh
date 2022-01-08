@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/bin/sh
 export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 
 # enable needed APIs
@@ -16,4 +15,4 @@ gcloud container clusters create ${CLUSTER_NAME} \
 --machine-type=e2-small \
 --disk-size=20GB \
 --logging=SYSTEM,WORKLOAD \
---monitoring=SYSTEM,WORKLOAD
+--monitoring=SYSTEM

@@ -40,8 +40,14 @@ jobs:
   deploy:
       needs: [build]
       runs-on: ubuntu-20.04
+      env:
+        REPOSITORY_PREFIX: "${{ secrets.DOCKER_HUB_USER }}"
+        PATHS: customers-service vets-service visits-service
       steps:
       - uses: actions/checkout@v2
       - uses: google-github-actions/auth@v0.4.0
         with:
           credentials_json: ${{ secrets.GKE_SA_KEY }}
+      - name: Build images
+        working-directory: ./spring-petclinic-cloud
+        run: chmod +x scripts/deployToKubernetes.sh && ./scripts/deployToKubernetes.sh

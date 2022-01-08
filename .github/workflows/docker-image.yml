@@ -35,4 +35,4 @@ jobs:
       working-directory: ./spring-petclinic-cloud
       run: for p in ${{ env.PATHS }}; do cd $p && mvn spring-boot:build-image -Pk8s -DREPOSITORY_PREFIX=${{ env.REPOSITORY_PREFIX }} && cd ..; done 
     - name: Push images
-      run: for p in ${{ env.PATHS }}; do echo ${p} && docker push ${{ env.REPOSITORY_PREFIX }}${p}:latest; done
+      run: for p in ${{ env.PATHS }}; do echo ${p} && docker push ${{ env.REPOSITORY_PREFIX }}/${p}:latest; done

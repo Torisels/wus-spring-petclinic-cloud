@@ -1,5 +1,4 @@
 #!/bin/bash
-export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 
 # enable needed APIs
 gcloud services enable \

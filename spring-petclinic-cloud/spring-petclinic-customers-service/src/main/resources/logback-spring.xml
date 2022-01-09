@@ -3,4 +3,18 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <!-- Required for Loglevel managment into the Spring Petclinic Admin Server-->
     <jmxConfigurator/>
+
+    <appender name="CLOUD" class="com.google.cloud.logging.logback.LoggingAppender">
+    <!-- Optional : filter logs at or above a level -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>INFO</level>
+    </filter>
+    <log>customers-service.log</log> <!-- Optional : default java.log -->
+    <enhancer>com.example.logging.logback.enhancers.ExampleEnhancer</enhancer> <!-- Optional -->
+    <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
+  </appender>
+
+  <root level="info">
+    <appender-ref ref="CLOUD" />
+  </root>
 </configuration>
